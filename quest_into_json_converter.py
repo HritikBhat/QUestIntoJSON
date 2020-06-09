@@ -3,6 +3,19 @@ from tkinter import messagebox
 
 quest_count=0
 
+def resetIP():
+    q_txt.delete("1.0",END)
+    opt1_txt.delete("1.0",END)
+    opt2_txt.delete("1.0",END)
+    opt3_txt.delete("1.0",END)
+    opt4_txt.delete("1.0",END)
+    opt1_val.set(0)
+    opt2_val.set(0)
+    opt3_val.set(0)
+    opt4_val.set(0)
+    e_txt.delete("1.0",END)
+    
+    
 def resetOP():
     global quest_count
     quest_count=0
@@ -53,6 +66,7 @@ def startConvert():
             json_st=",\n{\n"+quest_st+"\n"+type_st+"\n"+opt_st+"\n"+ans_st+"\n"+exp_st+"\n"+"}"
         #print(json_st)
         pr_txt.insert(END,json_st)
+        resetIP()
 
     except TypeError:
         messagebox.showwarning("Warning","Not Selected Choice/s")  
